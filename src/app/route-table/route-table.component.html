@@ -1,0 +1,19 @@
+<table class="table" mat-table [dataSource]="dataSource" matSort>
+  <ng-container matColumnDef="addressMask">
+    <th class="table-header" mat-header-cell *matHeaderCellDef mat-sort-header>Адрес назначения</th>
+    <td mat-cell *matCellDef="let route">{{ route.address }}/{{ route.mask }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="gateway">
+    <th class="table-header" mat-header-cell *matHeaderCellDef mat-sort-header>Шлюз</th>
+    <td mat-cell *matCellDef="let route">{{ route.gateway }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="interface">
+    <th class="table-header" mat-header-cell *matHeaderCellDef mat-sort-header>Интерфейс</th>
+    <td mat-cell *matCellDef="let route">{{ route.interface }}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
